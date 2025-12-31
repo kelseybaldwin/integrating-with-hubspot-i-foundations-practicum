@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    a(href="/update-cobj") add to this table
+    h1 Home - Custom Objects
+
+    // Columns: Name, Bio, Species, LastUpdate (in that order)
+    if data && data.length
+      table(border="1" cellpadding="6" cellspacing="0")
+        thead
+          tr
+            th Name
+            th Bio
+            th Species
+            th LastUpdate
+        tbody
+          each item in data
+            tr
+              // name
+              - var nameVal = item.properties && item.properties.name
+              td= nameVal != null ? nameVal : ''
+
+              // bio
+              - var bioVal = item.properties && item.properties.bio
+              td= bioVal != null ? bioVal : ''
+
+              // species
+              - var speciesVal = item.properties && item.properties.species
+              td= speciesVal != null ? speciesVal : ''
+
+              // last update - prefer updatedAt, fall back to hs_lastmodifieddate property
+              - var lastUpdate = item.updatedAt || (item.properties && item.properties.hs_lastmodifieddate) || ''
+              td= lastUpdate
+    else
+      p No records found.
