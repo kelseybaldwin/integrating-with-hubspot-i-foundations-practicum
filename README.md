@@ -6,6 +6,14 @@ To read the full directions, please go to the [practicum instructions](https://a
 
 **Put your HubSpot developer test account custom objects URL link here:** (https://app.hubspot.com/contacts/50861169/objects/2-55323801/views/all/list)
 
+**Environment:** create a `.env` file in the project root with your private app token:
+
+```
+PRIVATE_APP_ACCESS=your_private_app_token_here
+```
+
+Do NOT commit the `.env` file or your token to the repository.
+
 ___
 ## Tips:
 - Commit to your repository often. Even if you make small tweaks to your code, it’s best to be committing to your repository frequently.
@@ -26,3 +34,6 @@ ___
 - All work must be your own. During the grading process we will check the revision history. Submissions that do not meet this requirement will not be considered.
 - You must have at least two new routes in your index.js file and one new pug template for the homepage.
 - You must create a developer test account and link to it in your README.md file. Submissions that do not meet this requirement will not be considered.
+
+WORKING! 
+![alt text](image-1.png)
